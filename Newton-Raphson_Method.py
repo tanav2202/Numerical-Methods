@@ -1,8 +1,6 @@
 from math import * 
 from sympy import symbols,diff
 from sympy.abc import x,y
-import inspect
-# inspect.getsource(myfunc)
 
 # input lelo lambda
 # fir x0 y0 input lelo
@@ -11,6 +9,7 @@ import inspect
 
 def standardNR():
     print ("standard nr")
+    f = input("enter f(x) in pyth n syntax,ie. x^2 as x**2 , write math functions as func() , like exp(), tan().\n \n")
 
 
 
@@ -19,7 +18,7 @@ def non_HomoNR():
     f = input("enter f(x,y) in pyth n syntax,ie. x^2 as x**2 , write math functions as func() , like exp(), tan(). \n")
     g = input("enter g(x,y) expression in python syntax,ie. x^2 as x**2 , write math functions as func() , like exp(), tan(). \n")
     x_0,y_0 = map(float, input("x0 y0 :").split())
-    # x,y=symbols('x y',real=True) 
+
     fx = diff(f,x)
     fy = diff(f,y)
     gx = diff(g,x)
@@ -40,18 +39,19 @@ def non_HomoNR():
                     (lfx(x,y)*lgy(x,y)-lgx(x,y)*lfy(x,y)))
 
     # print(h(x_0,y_0),k(x_0,y_0),f , g)
+    print ("n \t x \t\t y \t\t h \t\t k ")
     while (abs((h(x_0,y_0)+k(x_0,y_0))) >= 0.00002):
-        counter +=1
-        # print(counter,"\t",'%.5f'%a,"\t",'%.5f'%func(a),"\t",'%.5f'%b,"\t",'%.5f'%func(b),"\t",'%.5f'%c,"\t",'%.5f'%func(c),"\t",update)
+
         hv = h(x_0,y_0)
         kv = k(x_0,y_0)
-        print("h : ",hv,"k: ",kv)
+        print(counter,"\t",'%.5f'%x_0,"\t",'%.5f'%y_0,"\t" ,'%.5f'%hv,"\t" , '%.5f'%kv)
+        counter +=1
         x_0=x_0+h(x_0,y_0)
         y_0=y_0+k(x_0,y_0)
 
 
 
-    print("The value of root is : ",x_0,y_0)
+    print("The value of root is : ",'%.5f'%x_0,'%.5f'%y_0)
 
 
 
