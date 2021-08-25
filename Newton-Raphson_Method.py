@@ -58,7 +58,7 @@ def non_HomoNR():
 def main():
     print("Starting.........")
     # a , b  = map(int, input("enter a b :").split())
-    case=input("enter 1 for single variable and 2 for multi \t")
+    case=input("enter 1 for single variable(does not work) and 2 for multi \t")
     if case == 1:
         standardNR()
     else :
