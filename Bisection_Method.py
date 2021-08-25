@@ -1,11 +1,8 @@
 from math import * 
 
-# def func(x):
 
-# Prints root of func(x)
-# with error of EPSILON
 def bisection(a,b):
-    func = eval("lambda x:"+input("enter expression in python syntax,  write math functions as func() , like exp(), tan(). \n"))
+    func = eval("lambda x:"+input("enter expression in python syntax,ie. x^2 as x**2 , write math functions as func() , like exp(), tan(). \n"))
     if (func(a) * func(b) >= 0):
         print("You have not assumed right a and b\n")
         return
@@ -14,10 +11,9 @@ def bisection(a,b):
     counter = 0
     print("n\t    a\t\t  f(a)\t\t  b\t"+"  "+"\tf(b)\t\t  c=(a+b)/2\t  f(c)\t\tupdate")
     while ((b-a) >= 0.00001):
-
+        update=""
         # Find middle point
         c = (a+b)/2
-        update=""
         # Check if middle point is root
         if (func(c) == 0.0):
             break
