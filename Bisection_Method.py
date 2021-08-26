@@ -12,6 +12,7 @@ def bisection(a,b):
     print("n\t    a\t\t  f(a)\t\t  b\t"+"  "+"\tf(b)\t\t  c=(a+b)/2\t  f(c)\t\tupdate")
     while ((b-a) >= 0.00001):
         update=""
+        print(counter,"\t",'%.5f'%a,"\t",'%.5f'%func(a),"\t",'%.5f'%b,"\t",'%.5f'%func(b),"\t",'%.5f'%c,"\t",'%.5f'%func(c),"\t",update)
         # Find middle point
         c = (a+b)/2
         # Check if middle point is root
@@ -26,7 +27,6 @@ def bisection(a,b):
             a = c
             update = "a = c"
         counter +=1
-        print(counter,"\t",'%.5f'%a,"\t",'%.5f'%func(a),"\t",'%.5f'%b,"\t",'%.5f'%func(b),"\t",'%.5f'%c,"\t",'%.5f'%func(c),"\t",update)
 
     print("The value of root is : ","%.4f"%c)
 
