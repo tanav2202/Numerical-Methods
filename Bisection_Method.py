@@ -10,8 +10,8 @@ def bisection(a,b):
     c = a
     counter = 0
     print("n\t    a\t\t  f(a)\t\t  b\t"+"  "+"\tf(b)\t\t  c=(a+b)/2\t  f(c)\t\tupdate")
+    update=""
     while ((b-a) >= 0.00001):
-        update=""
         print(counter,"\t",'%.5f'%a,"\t",'%.5f'%func(a),"\t",'%.5f'%b,"\t",'%.5f'%func(b),"\t",'%.5f'%c,"\t",'%.5f'%func(c),"\t",update)
         # Find middle point
         c = (a+b)/2
