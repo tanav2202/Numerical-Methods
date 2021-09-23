@@ -34,7 +34,7 @@ def bisection(a,b):
 
 def main():
     print("Starting")
-    a , b  = map(int, input("enter a b :").split())
+    a , b  = map(float, input("enter a b :").split())
     bisection(a, b)
 
 
