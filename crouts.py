@@ -1,18 +1,27 @@
-import pprint
-import scipy
-import scipy.linalg   # SciPy Linear Algebra Library
+import numpy as np
 
-A = scipy.array([ [7, 3, -1, 2], [3, 8, 1, -4], [-1, 1, 4, -1], [2, -4, -1, 6] ])
-P, L, U = scipy.linalg.lu(A.T)
+def crout(A):
 
-print "A:"
-pprint.pprint(A)
+    L = np.zeros((3, 3))
+    U = np.zeros((3, 3))
 
-print "P:"
-pprint.pprint(P.T)
+    for k in range(0, 3):
+        np.fill_diagonal(U, 1)
 
-print "L:"
-pprint.pprint(L.T)
+        for j in range(k, 3):
+            sum0 = sum([L[j, s] * U[s, k] for s in range(0, k)])  
+            L[j, k] = A[j, k] - sum0 
 
-print "U:"
-pprint.pprint(U.T)
+        for j in range(k+1, 3):
+            sum1 = sum([L[k, s] * U[s, j] for s in range(0, k)]) 
+            U[k, j] = (A[k, j] - sum1) / L[k, k]
+
+
+
+    print(L)
+    print()
+    print(U)
+    return L, U
+
+A = np.array([[2,3,1], [5,1,1], [3,2,4]])
+crout(A)
