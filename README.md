@@ -18,7 +18,8 @@ cd Numerical-Methods
 pip install -r requirements.txt 
 ```
 # Todo 
-- [  ] Interpotation
+- [ ] Crouts with complete solution table
+- [ ] Interpolation 
 
 <a href="https://github.com/IIITB-IT-CS-ECE-2024Batch/Numerical-Methods/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=IIITB-IT-CS-ECE-2024Batch/Numerical-Methods" />
