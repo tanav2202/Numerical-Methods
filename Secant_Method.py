@@ -1,4 +1,5 @@
 
+from math import * 
 
 def SecantM():
     print("\n")
